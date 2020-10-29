@@ -140,8 +140,18 @@ gsap.to(".green", {
     rotation: "300_short", // 最短路径
 });
 ```
+### 5.3 相对值
 
-### 5.3 淡入淡出属性
+有些时候我们可能不清楚元素当前是否已经有translate，但就是想让元素相对它原本的位置移动一段距离，这时可以用相对值
+
+```js
+gsap.to(".green", {
+    duration: 3,
+    rotation: "+=170"
+});
+```
+
+### 5.4 淡入淡出属性
 ```js
 gsap.to(".green", {
     duration: 3,
@@ -149,7 +159,7 @@ gsap.to(".green", {
 });
 ```
 
-### 5.4 清除属性
+### 5.5 清除属性
 ```js
 gsap.from(".green", {
     duration: 5, 
@@ -160,7 +170,7 @@ gsap.from(".green", {
 });
 ```
 
-### 5.5 GSAP 不仅仅用于 DOM 元素，还可以为原始对象的自定义属性设置动画
+### 5.6 GSAP 不仅仅用于 DOM 元素，还可以为原始对象的自定义属性设置动画
 
 ```js
 var obj = {prop: 10};
@@ -171,27 +181,6 @@ gsap.to(obj, {
   onUpdate: function() {
     console.log(obj.prop); //logs the value on each update.
   }
-});
-```
-
-### 5.6 GSAP 设置动画状态
-
-```js
-const handlePlay = document.getElementById("play");
-
-const tween = gsap.to(".green", {
-    duration: 2, x: 200, scale: 2, paused: true,
-    onComplete() {
-        console.log(tween)
-    }
-});
-
-handlePlay.addEventListener("click", () => {
-    tween.play();
-    setTimeout(() => {
-        tween.pause()
-        console.log('当前进度', tween.progress())
-    }, 300)
 });
 ```
 
@@ -216,7 +205,28 @@ handlePlay.addEventListener("click", () => {
 });
 ```
 
-### 5.8 设置默认的参数
+### 5.8 GSAP 设置动画状态
+
+```js
+const handlePlay = document.getElementById("play");
+
+const tween = gsap.to(".green", {
+    duration: 2, x: 200, scale: 2, paused: true,
+    onComplete() {
+        console.log(tween)
+    }
+});
+
+handlePlay.addEventListener("click", () => {
+    tween.play();
+    setTimeout(() => {
+        tween.pause()
+        console.log('当前进度', tween.progress())
+    }, 300)
+});
+```
+
+### 5.9 设置默认的参数
 
 ```js
 gsap.defaults({ ease: "power2.in", duration: 1 });
@@ -233,4 +243,4 @@ gsap.config({
 * [官方的示例](https://www.tweenmax.com.cn/demo/)
 * [codepen](https://codepen.io/airen/pen/RwrdaBY)
 
-## 
+## TimeLine 时间轴

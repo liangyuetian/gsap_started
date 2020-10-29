@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>gsap</title>
+    <link rel="stylesheet" href="/gsap_started/main.css">
+    <style>
+        #container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: visible;
+        }
+        .box {
+            background-color: #88ce02;
+            position: relative;
+        }
+        .box:before {
+            padding-top:100%;
+            content:"";
+            display:block;
+        }
+    </style>
+</head>
+<body>
+    <h2 class="title">交错</h2>
+    <div id="container"></div>
+    <div>
+        <button id="play">play</button>
+    </div>
+    <script type="module" src="./index.js"></script>
+</body>
+</html>
