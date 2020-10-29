@@ -54,10 +54,16 @@ GSAP有几大核心模块，它们是：
 ## [加载 GSAP 的方式](https://greensock.com/docs/v3/Installation#CDN)
 
 使用 [CDN]() 方式
+
 ![](https://www.w3cplus.com/sites/default/files/blogs/2020/2007/greensock-beginner-2.gif)
 
+图片出自 [w3cplus](https://www.w3cplus.com/animation/GSAP-for-beginner.html)
+
 使用 [NPM](https://greensock.com/docs/v3/Installation?checked=core#modules) 方式
+
 ![](https://www.w3cplus.com/sites/default/files/blogs/2020/2007/greensock-beginner-3.gif)
+
+图片出自 [w3cplus](https://www.w3cplus.com/animation/GSAP-for-beginner.html)
 
 ## 简单的小demo
 
