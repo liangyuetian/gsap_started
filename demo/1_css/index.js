@@ -1,4 +1,4 @@
-import {gsap} from "../../node_modules/gsap";
+import {gsap} from "../../node_modules/gsap/index";
 
 gsap.to("h2.title", {duration: 1, display: 'block', opacity: 1});
 gsap.to(".box", {duration: 2, x: 300});

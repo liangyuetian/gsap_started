@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>gsap</title>
+    <link rel="stylesheet" href="/gsap_started/main.css">
+    <style>
+        body {
+            margin: 10px;
+        }
+        .actions {
+            margin-top: 100px;
+            padding: 3vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-sizing: border-box;
+            background-color: rgba(0, 0, 0, 0.5);
+            width: 100%;
+        }
+        button {
+            display: inline-flex;
+            align-items: center;
+            font-size: 1.2rem;
+            height: 3rem;
+            padding: 0.2rem 3.2rem;
+            color: rgba(255, 255, 255, 0.8);
+            background: #ff3366;
+            border-radius: 10rem;
+            border: none;
+            cursor: pointer;
+            margin: 0 2vh;
+            transition: all 1s ease-in;
+            transform-origin: center;
+        }
+        button:hover {
+            box-shadow: inset 0 0 3px 5px currentColor;
+            transform: rotate(2deg) skew(1deg, -1deg);
+        }
+    </style>
+</head>
+<body>
+    <h2 class="title">gsap.to() object</h2>
+    <div class="box orange" data-wx-url="https://"></div>
+    <div class="box grey"></div>
+    <div class="box green"></div>
+    <div class="actions">
+        <button id="play">Play Pause</button>
+    </div>
+    <div id="gsap_obj_box" class="font_white"></div>
+    <script type="module" src="./index.js"></script>
+</body>
+</html>
