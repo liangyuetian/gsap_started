@@ -1,4 +1,4 @@
-import {gsap} from "../../node_modules/gsap/index";
+import {gsap} from "../../node_modules/gsap/index.js";
 
 const obj = {prop: 10, name: 'string'};
 const a = []

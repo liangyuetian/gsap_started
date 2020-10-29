@@ -1,13 +1,18 @@
 {
-  "name": "GSAP Started",
+  "name": "gsap_started",
   "version": "1.0.0",
   "description": "gsap 入门项目",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "do2c": "doctoc ./demo/text.md"
+  },
   "author": "",
   "type": "module",
   "license": "ISC",
   "dependencies": {
     "gsap": "^3.5.1"
+  },
+  "devDependencies": {
+    "doctoc": "^1.4.0"
   }
 }

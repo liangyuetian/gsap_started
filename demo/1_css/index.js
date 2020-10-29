@@ -1,16 +1,33 @@
-import {gsap} from "../../node_modules/gsap/index";
+import {gsap, Linear, TweenMax} from "../../node_modules/gsap/index.js";
 
+// gsap.to() gsap.fromTo() gsap.from()
 gsap.to("h2.title", {duration: 1, display: 'block', opacity: 1});
-gsap.to(".box", {duration: 2, x: 300});
+gsap.to(".box", {
+    duration: 2, x: 300
+});
 
-gsap.to(".green", {
+// 重复
+gsap.to(".grey", {
+    duration: 2, x: 300,
+    repeat: 10,
+    yoyo: true, // 规定是否应该反向播放动画
+    repeatDelay: 0.5,
+    ease: Linear.easeNone,
+    onRepeat() {
+        gsap.set('.grey', {
+            backgroundColor: "hsl(" + Math.random() * 255 + ", 90%, 60%)"
+        })
+    }
+});
+
+TweenMax.to(".green", {
     duration: 3,
-    force3D: true,
+    // force3D: true,
     // transformPerspective: 500,
     rotation: "-170_short",
     rotationX: 45,
     scaleX: 0.8,
-    transformOrigin: "left top",
+    // transformOrigin: "left top",
     // y: 50,
     // z: -300
 });

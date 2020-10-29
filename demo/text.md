@@ -1,3 +1,26 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+
+- [GSAP 入门](#gsap-%E5%85%A5%E9%97%A8)
+  - [简介](#%E7%AE%80%E4%BB%8B)
+  - [1 为什么选择GSAP](#1-%E4%B8%BA%E4%BB%80%E4%B9%88%E9%80%89%E6%8B%A9gsap)
+  - [2 文档](#2-%E6%96%87%E6%A1%A3)
+  - [3 GSAP核心模块](#3-gsap%E6%A0%B8%E5%BF%83%E6%A8%A1%E5%9D%97)
+  - [4 加载 GSAP 的方式](#4-%E5%8A%A0%E8%BD%BD-gsap-%E7%9A%84%E6%96%B9%E5%BC%8F)
+  - [5 简单的小demo](#5-%E7%AE%80%E5%8D%95%E7%9A%84%E5%B0%8Fdemo)
+    - [5.1 开启3D](#51-%E5%BC%80%E5%90%AF3d)
+    - [5.2 特定的旋转方向](#52-%E7%89%B9%E5%AE%9A%E7%9A%84%E6%97%8B%E8%BD%AC%E6%96%B9%E5%90%91)
+    - [5.3 淡入淡出属性](#53-%E6%B7%A1%E5%85%A5%E6%B7%A1%E5%87%BA%E5%B1%9E%E6%80%A7)
+    - [5.4 清除属性](#54-%E6%B8%85%E9%99%A4%E5%B1%9E%E6%80%A7)
+    - [5.5 GSAP 不仅仅用于 DOM 元素，还可以为原始对象的自定义属性设置动画](#55-gsap-%E4%B8%8D%E4%BB%85%E4%BB%85%E7%94%A8%E4%BA%8E-dom-%E5%85%83%E7%B4%A0%E8%BF%98%E5%8F%AF%E4%BB%A5%E4%B8%BA%E5%8E%9F%E5%A7%8B%E5%AF%B9%E8%B1%A1%E7%9A%84%E8%87%AA%E5%AE%9A%E4%B9%89%E5%B1%9E%E6%80%A7%E8%AE%BE%E7%BD%AE%E5%8A%A8%E7%94%BB)
+    - [5.6 GSAP 设置动画状态](#56-gsap-%E8%AE%BE%E7%BD%AE%E5%8A%A8%E7%94%BB%E7%8A%B6%E6%80%81)
+    - [5.7 GSAP 设置动画状态](#57-gsap-%E8%AE%BE%E7%BD%AE%E5%8A%A8%E7%94%BB%E7%8A%B6%E6%80%81)
+    - [5.8 设置默认的参数](#58-%E8%AE%BE%E7%BD%AE%E9%BB%98%E8%AE%A4%E7%9A%84%E5%8F%82%E6%95%B0)
+  - [](#)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 # GSAP 入门
 
 ## 简介
@@ -20,7 +43,7 @@ GSAP中有很多工具和插件，我们可以利用它们来快速开发Web动�
 除了GSAP具有强大的特性、工具和插件之外，而且学习曲线也相对较浅，因为它在所有不同的实现和插件中使用了直观且一致的语法。此外， [GSAP论坛](https://greensock.com/forums/) 还提供了很棒的文档、教程等。
 
 
-## 为什么选择GSAP
+## 1 为什么选择GSAP
 
 * 速度快： GSAP专门优化了动画性能，使用实现和CSS一样的高性能动效
 * 轻量和模块化： 模块化与插件式的结构保持了GSAP核心引擎的轻量，TweenLite包非常的小。GSAP还提供了 TweenLite、 TimelineLite、 TimelineMax、 TweenMax等功能动画模块，在使用的时候可以按需加载
@@ -37,12 +60,12 @@ GSAP也非常的灵活，可以适用于你给它的任何东西。也就是，G
 一旦你学习了GSAP相关的基本语法，就能够在任何可运行JavaScript脚本的地方使用GSAP。
 如果你也比较关注DOM元素的CSS属性的动画，在使用GSAP时，还可以在React、Vue等前端框架中使用。
 
-## 文档
+## 2 文档
 
 * [https://greensock.com/](https://greensock.com/)
 * [https://greensock.com/gsap/](https://greensock.com/gsap/)
 
-## GSAP核心模块
+## 3 GSAP核心模块
 
 GSAP有几大核心模块，它们是：
 
@@ -51,7 +74,7 @@ GSAP有几大核心模块，它们是：
 * TimelineLite：一种轻量级的Timeline，用于控制多个Tween和（或）其他Timeline
 * TimelineMax：一个增强版的TimelineLite，它提供了额外的、非必要的功能，如repeat、repeatDelay和yoyo等等
 
-## [加载 GSAP 的方式](https://greensock.com/docs/v3/Installation#CDN)
+## 4 [加载 GSAP 的方式](https://greensock.com/docs/v3/Installation#CDN)
 
 使用 [CDN]() 方式
 
@@ -65,7 +88,7 @@ GSAP有几大核心模块，它们是：
 
 图片出自 [w3cplus](https://www.w3cplus.com/animation/GSAP-for-beginner.html)
 
-## 简单的小demo
+## 5 简单的小demo
 
 html
 ```html
@@ -84,7 +107,13 @@ gsap.to(".box", {duration: 2, x: 300});
 gsap.to(".green", {duration: 3, rotation: 360, scale: 0.5});
 ```
 
-开启3D
+常用的动画属性
+* x：相当于CSS的transform: translateX()，即元素在x轴移动
+* scale：相当于CSS的transform: scale()，即元素放大或缩小
+* duration：相当于CSS的animation-duration，动画播放的持续时间
+* paused：是设置动画的状态
+
+### 5.1 开启3D
 js
 ```js
 gsap.to(".green", {
@@ -93,7 +122,7 @@ gsap.to(".green", {
 });
 ```
 
-特定的旋转方向
+### 5.2 特定的旋转方向
 
 特定方向的 CSS 属性的 Tweens 旋转可以是顺时针（后缀）、逆时针（后缀）或最短方向（后缀），
 在这种情况下，插件会根据最短路径为你选择方向。
@@ -112,7 +141,7 @@ gsap.to(".green", {
 });
 ```
 
-淡入淡出属性
+### 5.3 淡入淡出属性
 ```js
 gsap.to(".green", {
     duration: 3,
@@ -120,7 +149,7 @@ gsap.to(".green", {
 });
 ```
 
-清除属性
+### 5.4 清除属性
 ```js
 gsap.from(".green", {
     duration: 5, 
@@ -131,7 +160,7 @@ gsap.from(".green", {
 });
 ```
 
-## GSAP 不仅仅用于 DOM 元素，还可以为原始对象的自定义属性设置动画
+### 5.5 GSAP 不仅仅用于 DOM 元素，还可以为原始对象的自定义属性设置动画
 
 ```js
 var obj = {prop: 10};
@@ -143,8 +172,65 @@ gsap.to(obj, {
     console.log(obj.prop); //logs the value on each update.
   }
 });
-
 ```
 
-## GSAP 设置动画状态
+### 5.6 GSAP 设置动画状态
 
+```js
+const handlePlay = document.getElementById("play");
+
+const tween = gsap.to(".green", {
+    duration: 2, x: 200, scale: 2, paused: true,
+    onComplete() {
+        console.log(tween)
+    }
+});
+
+handlePlay.addEventListener("click", () => {
+    tween.play();
+    setTimeout(() => {
+        tween.pause()
+        console.log('当前进度', tween.progress())
+    }, 300)
+});
+```
+
+### 5.7 GSAP 设置动画状态
+
+```js
+const handlePlay = document.getElementById("play");
+
+const tween = gsap.to(".green", {
+    duration: 2, x: 200, scale: 2, paused: true,
+    onComplete() {
+        console.log(tween)
+    }
+});
+
+handlePlay.addEventListener("click", () => {
+    tween.play();
+    setTimeout(() => {
+        tween.pause()
+        console.log('当前进度', tween.progress())
+    }, 300)
+});
+```
+
+### 5.8 设置默认的参数
+
+```js
+gsap.defaults({ ease: "power2.in", duration: 1 });
+
+gsap.config({
+    autoSleep: 60,
+    force3D: true,
+    nullTargetWarn: false,
+    units: {x: "vw", y: "vh"}
+});
+```
+
+示例：
+* [官方的示例](https://www.tweenmax.com.cn/demo/)
+* [codepen](https://codepen.io/airen/pen/RwrdaBY)
+
+## 

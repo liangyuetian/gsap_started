@@ -21,7 +21,7 @@
         button {
             display: inline-flex;
             align-items: center;
-            font-size: 1.2rem;
+            font-size: 16px;
             height: 3rem;
             padding: 0.2rem 3.2rem;
             color: rgba(255, 255, 255, 0.8);
@@ -29,7 +29,7 @@
             border-radius: 10rem;
             border: none;
             cursor: pointer;
-            margin: 0 2vh;
+            margin: 0 10px;
             transition: all 1s ease-in;
             transform-origin: center;
         }
@@ -45,7 +45,10 @@
     <div class="box grey"></div>
     <div class="box green"></div>
     <div class="actions">
-        <button id="play">Play Pause</button>
+        <button id="play">Play</button>
+        <button id="resume">恢复</button>
+        <button id="restart">restart</button>
+        <button id="time0">恢复到初始状态</button>
     </div>
     <div id="gsap_obj_box" class="font_white"></div>
     <script type="module" src="./index.js"></script>
