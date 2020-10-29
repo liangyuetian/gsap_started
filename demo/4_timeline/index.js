@@ -1,13 +1,26 @@
 import {gsap} from "../../node_modules/gsap/index.js";
+// https://greensock.com/docs/v3/GSAP/Timeline
 
-gsap.staggerTo('.box', 1, {
-    cycle: {
-        backgroundColor: ["#ff3366", "#692233", "#692233", "#4326AA", "#4326AA", "#26AA4B"],
-        y: function(index, target) {
-            console.log(index, target)
-            //目标target &lt; div class = "box" &gt; &lt; /div&gt;
-            // 目标数组的动画索引值index
-            return index * 20;
-        },
-    }
-})
+let tl = gsap.timeline({
+    repeat: 0,
+    repeatDelay: 1,
+    yoyo: true,
+    defaults: {
+        // ease: "elastic",
+        duration: 1
+    },
+    onComplete: myFunction
+});
+tl.to('.grey', {x: 100}, "someLabel")
+    .to('.green', {x: 200, duration: 1}, "+=0.5")
+    .to('.wheat', {x: 200}, "-=0.5")
+    .to('.saddlebrown', {x: 200})
+    .to('.aqua', {x: 200}, "someLabel+=2")
+    .to('.cornflowerblue', {x: 200})
+    .to('.purple', {x: 200})
+
+// tl.pause()
+
+function myFunction() {
+    console.log(tl)
+}
