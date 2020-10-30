@@ -5,69 +5,75 @@
     <title>gsap</title>
     <link rel="stylesheet" href="/gsap_started/main.css">
     <style>
-        body {
-            margin: 10px;
+        #demoWrapper {
+            width: 600px;
+            height: 350px;
+            -webkit-font-smoothing: antialiased;
+            margin:auto;
         }
-        .box {
-            display: block;
+        h1 {
+            position: relative;
+            margin-top: 10px;
+            font-size: 36px;
+            font-weight: normal;
         }
-        .actions {
-            margin-top: 100px;
-            padding: 3vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            box-sizing: border-box;
-            background-color: rgba(0, 0, 0, 0.5);
-            width: 100%;
+
+        h2 {
+            position: relative;
+            font-size: 22px;
+            font-weight: normal;
+            color: #cfcfcf;
         }
-        button {
-            display: inline-flex;
-            align-items: center;
+
+        #feature {
+            position: relative;
+            float: left;
+        }
+
+        #description {
+            position: relative;
+            float: left;
+            margin-left: 20px;
+            width: 290px;
             font-size: 16px;
-            height: 3rem;
-            padding: 0.2rem 3.2rem;
-            color: rgba(255, 255, 255, 0.8);
-            background: #26aa4b;
-            border-radius: 10rem;
-            border: none;
-            cursor: pointer;
-            margin: 0 10px;
-            transition: all 1s ease-in;
-            transform-origin: center;
+            line-height: 24px;
         }
-        button:hover {
-            box-shadow: inset 0 0 3px 5px currentColor;
-            transform: rotate(2deg) skew(1deg, -1deg);
+
+        #nav {
+            margin: 20px 10px;
         }
-        .wheat {
-            background-color: wheat;
-        }
-        .saddlebrown {
-            background-color: saddlebrown;
-        }
-        .aqua {
-            background-color: aqua;
-        }
-        .cornflowerblue {
-            background-color: cornflowerblue;
-        }
-        .purple {
-            background-color: purple;
+
+        #nav img {
+            text-align: center;
+            position: relative;
+            margin-right: 20px;
+
         }
     </style>
 </head>
 <body>
-    <div class="title">在stagger（错开）动画中设定属性组。虽然stagger限定了动画目标使用相同的属性（如x:100, rotation:90），但你可以使用cycle来设定一个属性组（如 cycle:{x:[100,-100], rotation:[30,60,90]} ），还可使用function关键词（如 {x:function() { return Math.random() * 200; }} ）
-        cycle适用于 staggerTo() 、 staggerFrom() 和 staggerFromTo() 。</div>
-    <div class="box grey"></div>
-    <div class="box green"></div>
-    <div class="box wheat"></div>
-    <div class="box saddlebrown"></div>
-    <div class="box aqua"></div>
-    <div class="box cornflowerblue"></div>
-    <div class="box purple"></div>
-    <div id="gsap_obj_box" class="font_white"></div>
+    <div id="demoWrapper">
+        <div id="content">
+            <h1>Timeline</h1>
+            <h2>时间轴 -- 将一系列的动画连接起来</h2>
+            <div id="info">
+                <img src="images/feature_robust.png" width="240" height="151" id="feature">
+                <p id="description">
+                    TimelineLite是一个轻量级的、简单易用的时间轴类，可以用来建立和管理TweenLite、TweenMax、TimelineLite、TimelineMax等实例组成的队列。你可以想象，一个TimelineLite实例就像是一个虚拟的影片剪辑时间轴或是一个你可以在掌控时间的基础上在里面放置任何动画或Timeline的容器。</p>
+            </div>
+        </div>
+        <div style="clear:both"></div>
+        <div id="nav">
+            <img src="images/icon_robust.png" width="83" height="59">
+            <img src="images/icon_overwrite.png" width="43" height="59">
+            <img src="images/icon_compatible.png" width="73" height="59">
+            <img src="images/icon_support.png" width="83" height="59">
+            <img src="images/icon_plugin.png" width="76" height="59">
+        </div>
+        <div id="sliderWrapper">
+            <div id="slider" style="height:10px;"></div>
+        </div>
+    </div>
     <script type="module" src="./index.js"></script>
 </body>
 </html>

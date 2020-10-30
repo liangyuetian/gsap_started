@@ -61,8 +61,18 @@ gsap.to(".grey", {
 // });
 
 // 随机值
-gsap.to(".green", {
-    duration: 5,
-    backgroundColor: "random([white, red; black])"
-    // x: "random([0, 100, 200, 500])" //chooses a random number between -100 and 100 for each target, rounding to the closest 5!
-});
+// gsap.to(".green", {
+//     duration: 5,
+//     backgroundColor: "random([white, red; black])"
+//     // x: "random([0, 100, 200, 500])" //chooses a random number between -100 and 100 for each target, rounding to the closest 5!
+// });
+
+// 修正补间值
+// gsap.to(".green", {
+//     modifiers: { // 修正补间值
+//         x(x) {
+//             console.log(x)
+//             return parseFloat(x) * 2 + 'px'
+//         }
+//     }
+// });

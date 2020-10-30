@@ -1,26 +1,3 @@
-<!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
-
-- [GSAP 入门](#gsap-%E5%85%A5%E9%97%A8)
-  - [简介](#%E7%AE%80%E4%BB%8B)
-  - [1 为什么选择GSAP](#1-%E4%B8%BA%E4%BB%80%E4%B9%88%E9%80%89%E6%8B%A9gsap)
-  - [2 文档](#2-%E6%96%87%E6%A1%A3)
-  - [3 GSAP核心模块](#3-gsap%E6%A0%B8%E5%BF%83%E6%A8%A1%E5%9D%97)
-  - [4 加载 GSAP 的方式](#4-%E5%8A%A0%E8%BD%BD-gsap-%E7%9A%84%E6%96%B9%E5%BC%8F)
-  - [5 简单的小demo](#5-%E7%AE%80%E5%8D%95%E7%9A%84%E5%B0%8Fdemo)
-    - [5.1 开启3D](#51-%E5%BC%80%E5%90%AF3d)
-    - [5.2 特定的旋转方向](#52-%E7%89%B9%E5%AE%9A%E7%9A%84%E6%97%8B%E8%BD%AC%E6%96%B9%E5%90%91)
-    - [5.3 淡入淡出属性](#53-%E6%B7%A1%E5%85%A5%E6%B7%A1%E5%87%BA%E5%B1%9E%E6%80%A7)
-    - [5.4 清除属性](#54-%E6%B8%85%E9%99%A4%E5%B1%9E%E6%80%A7)
-    - [5.5 GSAP 不仅仅用于 DOM 元素，还可以为原始对象的自定义属性设置动画](#55-gsap-%E4%B8%8D%E4%BB%85%E4%BB%85%E7%94%A8%E4%BA%8E-dom-%E5%85%83%E7%B4%A0%E8%BF%98%E5%8F%AF%E4%BB%A5%E4%B8%BA%E5%8E%9F%E5%A7%8B%E5%AF%B9%E8%B1%A1%E7%9A%84%E8%87%AA%E5%AE%9A%E4%B9%89%E5%B1%9E%E6%80%A7%E8%AE%BE%E7%BD%AE%E5%8A%A8%E7%94%BB)
-    - [5.6 GSAP 设置动画状态](#56-gsap-%E8%AE%BE%E7%BD%AE%E5%8A%A8%E7%94%BB%E7%8A%B6%E6%80%81)
-    - [5.7 GSAP 设置动画状态](#57-gsap-%E8%AE%BE%E7%BD%AE%E5%8A%A8%E7%94%BB%E7%8A%B6%E6%80%81)
-    - [5.8 设置默认的参数](#58-%E8%AE%BE%E7%BD%AE%E9%BB%98%E8%AE%A4%E7%9A%84%E5%8F%82%E6%95%B0)
-  - [](#)
-
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
-
 # GSAP 入门
 
 ## 简介
@@ -151,7 +128,12 @@ gsap.to(".green", {
 });
 ```
 
-### 5.4 淡入淡出属性
+### 5.4 autoAlpha
+
+autoAlpha是opacity和visibility这2个css属性的结合
+
+什么要结合起来呢？一般来说，opacity为0的不可见元素，我们会认为它也是不可交互的（比如onclick不触发），因此附加visibility: hidden可以保证这一点。
+GSAP会正确处理动画过程中这2个css属性的变化。
 ```js
 gsap.to(".green", {
     duration: 3,
@@ -243,4 +225,90 @@ gsap.config({
 * [官方的示例](https://www.tweenmax.com.cn/demo/)
 * [codepen](https://codepen.io/airen/pen/RwrdaBY)
 
-## TimeLine 时间轴
+## 6 TimeLine 时间轴
+
+时间轴是GreenSock 动画平台中的动画组织、排序、管理工具，可创建时间轴（timeline）作为动画或其他时间轴的容器，这使得整个动画控制和精确管理时间变得简单。
+
+试想一下，如果不使用时间轴，那么构建复杂的动画序列将会非常麻烦，因为你需要用delay为每个动画设置开始时间。
+
+### 6.1 直接看例子
+
+```html
+<div id="content">
+    <h1>Timeline</h1>
+    <h2>时间轴 -- 将一系列的动画连接起来</h2>
+    <div id="info">
+        <img src="images/feature_robust.png" width="240" height="151" id="feature">
+        <p id="description">
+            TimelineLite是一个轻量级的、简单易用的时间轴类，可以用来建立和管理TweenLite、TweenMax、TimelineLite、TimelineMax等实例组成的队列。你可以想象，一个TimelineLite实例就像是一个虚拟的影片剪辑时间轴或是一个你可以在掌控时间的基础上在里面放置任何动画或Timeline的容器。</p>
+    </div>
+</div>
+<div style="clear:both"></div>
+<div id="nav">
+    <img src="images/icon_robust.png" width="83" height="59">
+    <img src="images/icon_overwrite.png" width="43" height="59">
+    <img src="images/icon_compatible.png" width="73" height="59">
+    <img src="images/icon_support.png" width="83" height="59">
+    <img src="images/icon_plugin.png" width="76" height="59">
+</div>
+<div id="sliderWrapper">
+    <div id="slider" style="height:10px;"></div>
+</div>
+```
+![](.text_images/47583a64.png)
+
+```js
+let tl = gsap.timeline({repeat: 0, repeatDelay: 0.5});
+
+tl.from('h1', 0.5, {
+    left: 100,
+    opacity: 0
+});
+
+tl.from('h2', 0.5, {
+    left: -100,
+    opacity: 0
+});
+
+tl.from('#feature', 0.5, {
+    scale: .5,
+    autoAlpha: 0
+}, "+=0.5");
+
+tl.from('#description', 0.5, {
+    left: 100,
+    autoAlpha: 0
+}, "-=0.25");
+
+// 添加一个时间节点
+tl.add("stagger", "+=0.5")
+
+tl.staggerFrom('#nav img', 0.2, {
+    scale: 0,
+    autoAlpha: 0
+}, 0.1, "stagger");
+
+```
+
+具体API 请参考：[https://greensock.com/docs/v3/GSAP/Timeline](https://greensock.com/docs/v3/GSAP/Timeline)
+
+### 6.2 文字动画
+
+```html
+<div class="text0"></div>
+```
+
+```js
+import {gsap} from "../../node_modules/gsap/index.js";
+import {TextPlugin} from "../../node_modules/gsap/TextPlugin.js";
+
+gsap.registerPlugin(TextPlugin)
+
+gsap.to('.text', {duration: 2, text: "This is the new text"});
+```
+
+### 6.3 工具
+[Eases 时间曲线](https://greensock.com/docs/v3/Eases)
+[贝塞尔生成工具](https://www.tweenmax.com.cn/tool/bezier/)
+
+## 接下来：SVG
