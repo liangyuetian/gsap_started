@@ -311,4 +311,17 @@ gsap.to('.text', {duration: 2, text: "This is the new text"});
 [Eases 时间曲线](https://greensock.com/docs/v3/Eases)
 [贝塞尔生成工具](https://www.tweenmax.com.cn/tool/bezier/)
 
-## 接下来：SVG
+## 7 接下来：SVG
+
+...
+
+## 8 其他同类型的库
+
+* [anime.js](https://github.com/juliangarnier/anime) [演示](https://animejs.com/documentation/#cssSelector)
+* [mo.js](https://github.com/mojs/mojs) [](http://ww1.mojs.io/)
+* [kute.js](https://github.com/thednp/kute.js/) [演示](http://thednp.github.io/kute.js/)
+* [TweenJS](https://github.com/CreateJS/TweenJS) [演示](https://www.createjs.com/tweenjs) 是一个简单的补间库
+* [Pace.js](https://github.com/HubSpot/pace) [演示](https://github.hubspot.com/pace/docs/welcome/) 网页自动加载进度条插件
+* [scrollreveal.js](https://scrollrevealjs.org/) 用于创建和管理元素进入可视区域时的动画效果
+* [vivus.js](https://github.com/maxwellito/vivus) [演示](http://maxwellito.github.io/vivus/) 为SVG制作动画
+* [Popmotion](https://github.com/popmotion/popmotion) 
