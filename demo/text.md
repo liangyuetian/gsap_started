@@ -1,4 +1,3 @@
-# GSAP 入门
 
 ## 简介
 
@@ -9,7 +8,6 @@
 在WebGL方面有Three.js、PixiJS、Babylon.js和PlayCanvas等。
 
 除此之外，业内还有一个制作动画非常出色的平台，那就是GSAP（GreenSock Animation Platform的简称）
-
 
 GSAP是GreenSock提供的一个制作动画的成熟的JavaScript库，该库源于Flash的动画。
 
@@ -95,7 +93,14 @@ js
 ```js
 gsap.to(".green", {
     duration: 3,
-    rotation: "-170_short"
+    force3D: true,
+    transformPerspective: 500,
+    rotation: "-170_short",
+    rotationX: 45,
+    scaleX: 0.8,
+    transformOrigin: "left top",
+    y: 50,
+    z: -300
 });
 ```
 
@@ -313,6 +318,9 @@ gsap.to('.text', {duration: 2, text: "This is the new text"});
 
 ## 7 接下来：SVG
 
+[https://greensock.com/docs/v3/Plugins/DrawSVGPlugin](https://greensock.com/docs/v3/Plugins/DrawSVGPlugin)
+[https://greensock.com/docs/v3/Plugins/MorphSVGPlugin](https://greensock.com/docs/v3/Plugins/MorphSVGPlugin)
+
 ...
 
 ## 8 其他同类型的库
@@ -325,3 +333,14 @@ gsap.to('.text', {duration: 2, text: "This is the new text"});
 * [scrollreveal.js](https://scrollrevealjs.org/) 用于创建和管理元素进入可视区域时的动画效果
 * [vivus.js](https://github.com/maxwellito/vivus) [演示](http://maxwellito.github.io/vivus/) 为SVG制作动画
 * [Popmotion](https://github.com/popmotion/popmotion) 
+
+## 9 代码仓库
+* [master](https://github.com/liangyuetian/gsap_started)
+* [markdown](https://github.com/liangyuetian/gsap_started/blob/master/demo/text.md)
+
+## 参考资料
+
+* [https://greensock.com/docs/v3](https://greensock.com/docs/v3)
+* [TweenMax 中文网](https://www.tweenmax.com.cn/)
+* [https://www.w3cplus.com/animation/GSAP-for-beginner.html](https://www.w3cplus.com/animation/GSAP-for-beginner.html)
+* [https://www.w3cplus.com/animation/gsap-timeline.html](https://www.w3cplus.com/animation/gsap-timeline.html)
