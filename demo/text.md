@@ -318,9 +318,12 @@ gsap.to('.text', {duration: 2, text: "This is the new text"});
 
 ## 7 接下来：SVG
 
-[https://greensock.com/docs/v3/Plugins/DrawSVGPlugin](https://greensock.com/docs/v3/Plugins/DrawSVGPlugin)
-[https://greensock.com/docs/v3/Plugins/MorphSVGPlugin](https://greensock.com/docs/v3/Plugins/MorphSVGPlugin)
+* [https://greensock.com/docs/v3/Plugins/DrawSVGPlugin](https://greensock.com/docs/v3/Plugins/DrawSVGPlugin)
+* [https://greensock.com/docs/v3/Plugins/MorphSVGPlugin](https://greensock.com/docs/v3/Plugins/MorphSVGPlugin)
 
+例子：
+* [https://codepen.io/tutsplus/pen/wBVJMj](https://codepen.io/tutsplus/pen/wBVJMj)
+* [https://codepen.io/tutsplus/pen/emqvNw](https://codepen.io/tutsplus/pen/emqvNw)
 ...
 
 ## 8 其他同类型的库
